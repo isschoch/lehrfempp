@@ -124,12 +124,16 @@ class Mesh : public mesh::Mesh {
    *        that is the n-th node in the container has index n-1.
    *
    */
+
+
+  friend class MeshFactory;
+  // TODO: ISIDOR: MAKE PRIVATE AGAIN!!
   Mesh(dim_t dim_world, NodeCoordList nodes, EdgeList edges, CellList cells,
        bool check_completeness);
 
-  friend class MeshFactory;
-
  public:
+
+       
   /** @brief Diagnostics control variable */
   static unsigned int output_ctrl_;
 };
